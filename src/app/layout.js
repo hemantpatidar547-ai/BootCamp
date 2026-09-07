@@ -28,10 +28,10 @@ export default function RootLayout ( { children } )
                             </div>
                         </div>
                         <div className="nav-center-links">
-                            <a href="#">Syllabus</a>
-                            <a href="#">Projects</a>
-                            <a href="#">Mentors</a>
-                            <a href="#">Pricing</a>
+                            <a href="#syllabus">Syllabus</a>
+                            <a href="#projects">Projects</a>
+                            <a href="#mentors">Mentors</a>
+                            <a href="#pricing">Pricing</a>
                         </div>
                         <div className="nav-right">
                             <button className="nav-cta">Apply now</button>

@@ -8,6 +8,30 @@ export default function Home ()
     const [ showModal, setShowModal ] = useState( false );
     const [ formData, setFormData ] = useState( { name: '', email: '', phone: '' } );
     const [ submitted, setSubmitted ] = useState( false );
+    const [ openFaq, setOpenFaq ] = useState( 0 );
+
+    const faqs = [
+        {
+            question: 'Do I need any prior coding experience to join the Bootcamp?',
+            answer: 'No. We start with the fundamentals and gradually move towards advanced full-stack development, AI tools, deployment, and system design.',
+        },
+        {
+            question: 'What will I learn during the Full-Stack Bootcamp?',
+            answer: 'You will learn JavaScript, React, Node.js, databases, APIs, Git, cloud deployment, AI-assisted development, and the practical skills needed to ship real projects.',
+        },
+        {
+            question: 'Will I build real projects during the program?',
+            answer: 'Yes. You will build and deploy portfolio-ready applications that demonstrate your skills to recruiters and hiring teams.',
+        },
+        {
+            question: 'What kind of career support is included?',
+            answer: 'You get guidance with your resume, GitHub portfolio, interview preparation, project presentation, and a focused job-search strategy.',
+        },
+        {
+            question: 'How do I reserve my spot?',
+            answer: 'Click any enrollment button on the page and submit your details. Our team will contact you with the next steps.',
+        },
+    ];
 
     const openModal = () => setShowModal( true );
     const closeModal = () => { setShowModal( false ); setSubmitted( false ); };
@@ -88,7 +112,7 @@ export default function Home ()
         [ scene, core, outerRing, innerRing, tunnelBack, tunnelMid, tunnelFront ].forEach( item => { if ( item ) item.style.animation = 'none'; } );
         const renderPortal = () =>
         {
-            currentProgress += ( targetProgress - currentProgress ) * 0.13;
+            currentProgress += ( targetProgress - currentProgress ) * 0.28;
             const progress = currentProgress;
             section.style.setProperty( '--portal-progress', progress.toFixed( 4 ) );
             section.dataset.portalStage = progress < 0.34 ? 'start' : progress < 0.68 ? 'mid' : 'end';
@@ -125,7 +149,7 @@ export default function Home ()
 
     return (
         <>
-            <section className="hero-section">
+            <section id="top" className="hero-section">
                 <div className="container">
                     <p className="pre-headline">🔥 LIMITED TIME ENROLLMENT: NEXT BATCH STARTS SOON</p>
                     <h1 className="headline">
@@ -142,30 +166,6 @@ export default function Home ()
             </section>
 
             <section className="alumni-section">
-                <div className="container alumni-container-inner">
-                    <p className="alumni-pre-headline">Top Tier Placements</p>
-                    <h2 className="alumni-headline">Our Alumni Work At</h2>
-                    <p className="alumni-sub-headline">
-                        Start your career at the world's most innovative companies.
-                        We equip you with the exact technical skills to succeed in elite engineering teams.
-                    </p>
-
-                    <div className="alumni-stats">
-                        <div className="stat-badge">
-                            <span className="stat-icon">🚀</span>
-                            <span className="stat-text">1000+ Placements</span>
-                        </div>
-                        <div className="stat-badge">
-                            <span className="stat-icon">💰</span>
-                            <span className="stat-text">24 LPA Highest</span>
-                        </div>
-                        <div className="stat-badge">
-                            <span className="stat-icon">🌟</span>
-                            <span className="stat-text">50+ MNCs</span>
-                        </div>
-                    </div>
-                </div>
-
                 <div className="alumni-glass-card">
                     <div className="marquee-wrapper">
                         <div className="marquee-track">
@@ -233,7 +233,7 @@ export default function Home ()
                 </div>
             </section>
 
-            <section className="placements-section-light">
+            <section id="mentors" className="placements-section-light">
                 <div className="light-section-header">
                     <p className="light-pre-title">SUCCESS STORIES</p>
                     <h2 className="light-main-title">
@@ -328,7 +328,7 @@ export default function Home ()
                     </div>
                 </div>
             </section>
-            <section className="roadmap-section">
+            <section id="syllabus" className="roadmap-section">
                 <div className="roadmap-container">
                     <div className="roadmap-header">
                         <span className="roadmap-pill">THE TRANSFORMATION</span>
@@ -405,7 +405,7 @@ export default function Home ()
                 <div className="message-container">
                     <div className="message-image-col">
                         <div className="message-img-backdrop"></div>
-                        <img src="/api/image" alt="Founders Message" className="message-img" />
+                        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=900&h=900&fit=crop" alt="Coding team collaborating in a workshop" className="message-img" />
                     </div>
                     <div className="message-text-col">
                         <span className="message-pill">AN HONEST MESSAGE</span>
@@ -462,7 +462,7 @@ export default function Home ()
             </section>
 
             {/* Mission & Success Story Section */ }
-            <section className="mission-section">
+            <section id="projects" className="mission-section">
                 <div className="mission-container">
                     <div className="mission-header">
                         <p className="mission-eyebrow">OUR TRACK RECORD</p>
@@ -507,80 +507,6 @@ export default function Home ()
 
                     <div className="mission-cta-row">
                         <button className="mission-cta-btn" onClick={ openModal }>JOIN THOUSANDS OF STUDENTS →</button>
-                    </div>
-                </div>
-            </section>
-
-            {/* ============================================
-                SECTION 1: TRANSFORMATION TIMELINE (3D)
-            ============================================ */}
-            <section className="timeline3d-section">
-                <div className="tl3d-stars"></div>
-                <div className="tl3d-glow-left"></div>
-                <div className="tl3d-glow-right"></div>
-                <div className="tl3d-container">
-                    <p className="tl3d-eyebrow">YOUR JOURNEY</p>
-                    <h2 className="tl3d-heading">
-                        One Path.<br />
-                        <span className="tl3d-accent">Every Skill That Matters.</span>
-                    </h2>
-
-                    <div className="tl3d-track">
-                        <div className="tl3d-line">
-                            <div className="tl3d-line-fill"></div>
-                        </div>
-
-                        <div className="tl3d-phase left">
-                            <div className="tl3d-card">
-                                <div className="tl3d-icon">🧱</div>
-                                <h3>Foundations</h3>
-                                <p>JavaScript depth, Git, Terminal mastery & problem solving mindset.</p>
-                                <div className="tl3d-pills">
-                                    <span>JS Core</span><span>Git</span><span>DSA</span>
-                                </div>
-                            </div>
-                            <div className="tl3d-node"><div className="tl3d-pulse"></div></div>
-                        </div>
-
-                        <div className="tl3d-phase right">
-                            <div className="tl3d-node"><div className="tl3d-pulse"></div></div>
-                            <div className="tl3d-card">
-                                <div className="tl3d-icon">⚙️</div>
-                                <h3>Full Stack Dev</h3>
-                                <p>Ship real, deployed products with React, Node.js & REST APIs.</p>
-                                <div className="tl3d-pills">
-                                    <span>React</span><span>Node.js</span><span>MongoDB</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="tl3d-phase left">
-                            <div className="tl3d-card">
-                                <div className="tl3d-icon">🤖</div>
-                                <h3>Agentic AI</h3>
-                                <p>Build with LLMs, Cursor & OpenAI APIs. Automate complex workflows.</p>
-                                <div className="tl3d-pills">
-                                    <span>LLMs</span><span>Cursor AI</span><span>OpenAI</span>
-                                </div>
-                            </div>
-                            <div className="tl3d-node"><div className="tl3d-pulse"></div></div>
-                        </div>
-
-                        <div className="tl3d-phase right">
-                            <div className="tl3d-node"><div className="tl3d-pulse"></div></div>
-                            <div className="tl3d-card">
-                                <div className="tl3d-icon">🚀</div>
-                                <h3>Placement Prep</h3>
-                                <p>Mock interviews, resume building & live GitHub portfolio that converts.</p>
-                                <div className="tl3d-pills">
-                                    <span>Mock Interviews</span><span>Resume</span><span>GitHub</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="tl3d-launch-btn-row">
-                        <button className="tl3d-launch-btn" onClick={ openModal }>🚀 LAUNCH MY CAREER →</button>
                     </div>
                 </div>
             </section>
@@ -707,7 +633,7 @@ export default function Home ()
             </section>
 
             {/* Final 3D Launch Section */}
-            <section className="launch3d-section">
+            <section id="pricing" className="launch3d-section">
                 <canvas ref={ launchCanvasRef } className="launch3d-canvas" aria-hidden="true"></canvas>
                 <div className="launch3d-noise" aria-hidden="true"></div>
                 <div className="launch3d-container">
@@ -744,17 +670,20 @@ export default function Home ()
                 <div className="scroll-portal-sticky">
                     <div className="portal-stars" aria-hidden="true"></div>
                     <div className="portal-copy portal-copy-start">
-                        <span>01 / ENTER THE STACK</span>
-                        <h2>Scroll into<br /><strong>the machine.</strong></h2>
+                        <span>01 / BUILD THE FOUNDATION</span>
+                        <h2>Learn the skills<br /><strong>companies hire for.</strong></h2>
+                        <p>JavaScript, Git, APIs and problem-solving taught through hands-on practice.</p>
                     </div>
                     <div className="portal-copy portal-copy-mid">
-                        <span>02 / BUILD THE INTELLIGENCE</span>
-                        <h2>Every layer<br /><strong>becomes yours.</strong></h2>
+                        <span>02 / BUILD REAL PRODUCTS</span>
+                        <h2>Turn your ideas<br /><strong>into working apps.</strong></h2>
+                        <p>Build with React, Node.js, databases and AI workflows while mentors guide your next move.</p>
                     </div>
                     <div className="portal-copy portal-copy-end">
-                        <span>03 / SHIP THE FUTURE</span>
-                        <h2>Come out<br /><strong>production-ready.</strong></h2>
-                        <button onClick={ openModal }>ENTER THE PROGRAM <b>↗</b></button>
+                        <span>03 / GET CAREER-READY</span>
+                        <h2>Ship your portfolio.<br /><strong>Start getting hired.</strong></h2>
+                        <p>Leave with deployed projects, a stronger GitHub and the confidence to crack interviews.</p>
+                        <button onClick={ openModal }>START BUILDING NOW <b>↗</b></button>
                     </div>
 
                     <div className="portal-scene" aria-label="Scroll-driven 3D coding architecture portal">
@@ -770,12 +699,87 @@ export default function Home ()
                             <i></i><i></i><i></i><i></i>
                         </div>
                         <span className="portal-float float-react">REACT</span>
-                        <span className="portal-float float-ai">AI SYSTEMS</span>
-                        <span className="portal-float float-cloud">CLOUD</span>
+                        <span className="portal-float float-ai">AI WORKFLOWS</span>
+                        <span className="portal-float float-cloud">DEPLOYED</span>
                     </div>
                     <div className="portal-scroll-line"><span></span></div>
                 </div>
             </section>
+
+            <section className="faq-section" aria-labelledby="faq-title">
+                <div className="faq-container">
+                    <p className="faq-eyebrow">NEED TO KNOW</p>
+                    <h2 id="faq-title" className="faq-title">Frequently Asked Questions</h2>
+                    <div className="faq-list">
+                        { faqs.map( ( faq, index ) =>
+                        {
+                            const isOpen = openFaq === index;
+                            return (
+                                <div className={ `faq-item ${ isOpen ? 'is-open' : '' }` } key={ faq.question }>
+                                    <button
+                                        className="faq-question"
+                                        type="button"
+                                        aria-expanded={ isOpen }
+                                        onClick={ () => setOpenFaq( isOpen ? -1 : index ) }
+                                    >
+                                        <span>{ faq.question }</span>
+                                        <span className="faq-toggle" aria-hidden="true">{ isOpen ? '−' : '+' }</span>
+                                    </button>
+                                    { isOpen && <p className="faq-answer">{ faq.answer }</p> }
+                                </div>
+                            );
+                        } ) }
+                    </div>
+                </div>
+            </section>
+
+            <footer className="site-footer">
+                <div className="footer-inner">
+                    <div className="footer-topline">
+                        <div className="footer-brand-block">
+                            <div className="footer-brand-mark"><span>&lt;</span><b>/</b><span>&gt;</span></div>
+                            <p className="footer-brand-name">CODING<span>SHARKS</span></p>
+                            <p className="footer-tagline">Build skills. Ship products.<br />Change your career.</p>
+                        </div>
+
+                        <div className="footer-cta-block">
+                            <p className="footer-cta-eyebrow">YOUR NEXT CHAPTER STARTS HERE</p>
+                            <h2>Ready to build<br /><span>what is next?</span></h2>
+                            <button className="footer-cta" onClick={ openModal }>START YOUR JOURNEY <span>↗</span></button>
+                        </div>
+                    </div>
+
+                    <div className="footer-links-row">
+                        <div>
+                            <p className="footer-label">EXPLORE</p>
+                            <a href="#top">Home</a>
+                            <a href="#syllabus">Syllabus</a>
+                            <a href="#projects">Projects</a>
+                        </div>
+                        <div>
+                            <p className="footer-label">PROGRAM</p>
+                            <a href="#mentors">Mentors</a>
+                            <a href="#pricing">Pricing</a>
+                            <a href="#faq-title">FAQs</a>
+                        </div>
+                        <div className="footer-contact">
+                            <p className="footer-label">LET'S CONNECT</p>
+                            <a href="mailto:hello@codingsharks.com">hello@codingsharks.com</a>
+                            <div className="footer-socials">
+                                <a href="#linkedin" aria-label="LinkedIn">in</a>
+                                <a href="#instagram" aria-label="Instagram">ig</a>
+                                <a href="#youtube" aria-label="YouTube">yt</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="footer-bottom">
+                        <span>© 2026 Coding Sharks. All rights reserved.</span>
+                        <span className="footer-status"><i></i> BUILDING THE FUTURE</span>
+                        <span>Made for ambitious builders.</span>
+                    </div>
+                </div>
+            </footer>
 
             {/* Lead Capture Modal */ }
 
