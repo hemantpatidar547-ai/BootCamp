@@ -2,11 +2,11 @@
   "pages": {
     "/page": [
       "static/chunks/src_app_globals_b80590.css",
-      "static/chunks/_af7535._.js",
-      "static/chunks/src_app_layout_69ca0b.js",
+      "static/chunks/node_modules_next_dist_986f43._.js",
+      "static/chunks/src_app_525ac6._.js",
+      "static/chunks/src_app_layout_8bd8b6.js",
       "static/chunks/src_app_036589._.js",
-      "static/chunks/node_modules_next_dist_compiled_react_26ec58._.js",
-      "static/chunks/src_app_page_14723a.js",
+      "static/chunks/src_app_page_809968.js",
       "static/chunks/node_modules_next_dist_compiled_react_a1d82d._.js",
       "static/chunks/node_modules_next_dist_compiled_react-dom_cjs_react-dom_development_c9a189.js",
       "static/chunks/node_modules_next_dist_compiled_react-dom_87a050._.js",

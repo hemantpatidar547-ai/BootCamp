@@ -3737,10 +3737,21 @@ body > section {
   .nav-container {
     min-width: 0;
     gap: .75rem;
+    width: 100%;
   }
 
   .logo-section {
     min-width: 0;
+    flex: auto;
+  }
+
+  .navbar-logo {
+    width: min(42vw, 150px);
+    max-width: 100%;
+  }
+
+  .nav-right {
+    flex-shrink: 0;
   }
 
   .logo-text {
@@ -3846,7 +3857,8 @@ body > section {
   }
 
   .card-image-wrapper {
-    height: 200px;
+    height: auto;
+    aspect-ratio: 640 / 823;
   }
 
   .roadmap-section, .message-section, .video-showcase-section, .mission-section, .timeline3d-section, .dna-section, .hud-section {

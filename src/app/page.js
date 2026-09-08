@@ -42,6 +42,13 @@ export default function Home ()
     const openModal = () => setShowModal( true );
     const closeModal = () => { setShowModal( false ); setSubmitted( false ); };
 
+    useEffect( () =>
+    {
+        const handleNavbarEnrollment = () => openModal();
+        window.addEventListener( 'open-enrollment-form', handleNavbarEnrollment );
+        return () => window.removeEventListener( 'open-enrollment-form', handleNavbarEnrollment );
+    }, [] );
+
     const handleSubmit = ( e ) =>
     {
         e.preventDefault();
