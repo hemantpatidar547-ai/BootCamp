@@ -11,6 +11,7 @@ export default function Home ()
 {
     const launchCanvasRef = useRef( null );
     const portalSectionRef = useRef( null );
+    const placementsRef = useRef( null );
     const [ showModal, setShowModal ] = useState( false );
     const [ formData, setFormData ] = useState( { name: '', email: '', phone: '' } );
     const [ submitted, setSubmitted ] = useState( false );
@@ -41,6 +42,11 @@ export default function Home ()
 
     const openModal = () => setShowModal( true );
     const closeModal = () => { setShowModal( false ); setSubmitted( false ); };
+
+    const scrollPlacements = ( direction ) =>
+    {
+        placementsRef.current?.scrollBy( { left: direction * ( placementsRef.current.clientWidth * 0.82 ), behavior: 'auto' } );
+    };
 
     useEffect( () =>
     {
@@ -254,7 +260,9 @@ export default function Home ()
                     </h2>
                 </div>
 
-                <div className="cards-container-light">
+                <div className="placements-carousel">
+                    <button className="placement-arrow placement-arrow-left" onClick={ () => scrollPlacements( -1 ) } aria-label="Show previous student">‹</button>
+                    <div ref={ placementsRef } className="cards-container-light">
                     {/* Card 1 */ }
                     <div className="student-card-light">
                         <div className="card-image-wrapper">
@@ -349,6 +357,9 @@ export default function Home ()
                             </div>
                         </div>
                     </div>
+                    </div>
+                    <button className="placement-arrow placement-arrow-right" onClick={ () => scrollPlacements( 1 ) } aria-label="Show next student">›</button>
+                    <p className="placement-scroll-hint">Swipe to see more students <span>→</span></p>
                 </div>
             </section>
             <section id="syllabus" className="roadmap-section">
@@ -445,40 +456,6 @@ export default function Home ()
                         <div className="signature-block">
                             <h4 className="founder-name">The Coding Sharks Team</h4>
                             <p className="founder-role">Lead Architects & Instructors</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Video Showcase Section */ }
-            <section className="video-showcase-section">
-                <div className="showcase-container">
-                    <div className="section-header center-align">
-                        <span className="message-pill">INSIDE THE PLATFORM</span>
-                        <h2 className="video-heading">
-                            Build interfaces that <span className="text-highlight-solid">command attention.</span>
-                        </h2>
-                        <p className="video-subtext">
-                            See exactly what you'll be architecting by the end of Week 12. No more basic shell tutorials—build lightning-fast, premium real-world products.
-                        </p>
-                    </div>
-
-                    <div className="video-wrapper">
-                        <div className="video-glow-effect"></div>
-                        <div className="mac-glass-frame">
-                            <div className="mac-top-bar">
-                                <span className="mac-dot red"></span>
-                                <span className="mac-dot yellow"></span>
-                                <span className="mac-dot green"></span>
-                            </div>
-                            <video
-                                src="https://cdn.dribbble.com/userupload/43816397/file/original-07ed345e8cfeaa243c03ba04000757c5.mp4"
-                                autoPlay
-                                loop
-                                muted
-                                playsInline
-                                className="showcase-video"
-                            />
                         </div>
                     </div>
                 </div>

@@ -503,6 +503,17 @@ body {
   scrollbar-width: thin;
 }
 
+.placements-carousel {
+  position: relative;
+  width: min(100%, 1500px);
+  margin: 0 auto;
+}
+
+.placement-arrow,
+.placement-scroll-hint {
+  display: none;
+}
+
 .cards-container-light::-webkit-scrollbar {
   height: 8px;
 }
@@ -742,7 +753,7 @@ body {
     scroll-snap-type: x mandatory;
     gap: 1.25rem;
     padding-left: 1.5rem;
-    padding-right: 4rem;
+    padding-right: 3rem;
     /* Extra right padding so last card can scroll fully into view */
     padding-bottom: 2rem;
     margin: 0;
@@ -757,10 +768,54 @@ body {
   }
 
   .student-card-light {
-    min-width: 85vw;
-    max-width: 85vw;
+    min-width: calc(100vw - 4rem);
+    max-width: calc(100vw - 4rem);
     scroll-snap-align: center;
     flex-shrink: 0;
+  }
+
+  .placements-carousel {
+    padding-bottom: 2.75rem;
+  }
+
+  .placement-arrow {
+    position: absolute;
+    top: 42%;
+    z-index: 3;
+    display: flex;
+    width: 38px;
+    height: 38px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 50%;
+    background: rgba(8, 8, 8, 0.86);
+    color: #ffffff;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  }
+
+  .placement-arrow-left {
+    left: 0.35rem;
+  }
+
+  .placement-arrow-right {
+    right: 0.35rem;
+  }
+
+  .placement-scroll-hint {
+    display: block;
+    margin: 0.25rem 0 0;
+    color: #94a3b8;
+    font-size: 0.78rem;
+    text-align: center;
+  }
+
+  .placement-scroll-hint span {
+    color: #65e6bf;
+    font-size: 1rem;
   }
 
   .alumni-glass-card {
@@ -3262,7 +3317,7 @@ body > section {
 
   .card-image-wrapper {
     height: auto;
-    aspect-ratio: 640 / 823;
+    aspect-ratio: 0.84;
   }
 
   .roadmap-section,
