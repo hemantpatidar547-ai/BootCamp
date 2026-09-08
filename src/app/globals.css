@@ -7,7 +7,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   scroll-padding-top: 82px;
   overflow-x: hidden;
 }
@@ -23,7 +23,7 @@ body {
 
 /* Navbar */
 .navbar {
-  padding: 1.2rem 0;
+  padding: 0.65rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   background-color: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(16px);
@@ -45,7 +45,18 @@ body {
 .logo-section {
   display: flex;
   align-items: center;
-  gap: 8px;
+  min-width: 190px;
+}
+
+.navbar-logo {
+  display: block;
+  width: 158px;
+  height: auto;
+  object-fit: contain;
+}
+
+.removed-logo {
+  display: none;
 }
 
 .logo-icon {
@@ -479,14 +490,35 @@ body {
 }
 
 .cards-container-light {
-  max-width: 1300px;
+  width: min(100%, 1500px);
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
   gap: 2rem;
+  align-items: flex-start;
+  padding: 0 1rem 2rem;
+  scrollbar-color: rgba(101, 230, 191, 0.75) rgba(255, 255, 255, 0.08);
+  scrollbar-width: thin;
+}
+
+.cards-container-light::-webkit-scrollbar {
+  height: 8px;
+}
+
+.cards-container-light::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+}
+
+.cards-container-light::-webkit-scrollbar-thumb {
+  background: rgba(101, 230, 191, 0.75);
+  border-radius: 20px;
 }
 
 .student-card-light {
+  flex: 0 0 280px;
   background: linear-gradient(180deg, #1a1a1c 0%, #0a0a0a 100%);
   border-radius: 20px;
   overflow: hidden;
@@ -543,14 +575,15 @@ body {
   position: absolute;
   bottom: 15px;
   left: 15px;
-  background: rgba(16, 185, 129, 0.15);
-  color: #34d399;
-  padding: 6px 12px;
+  background: #65e6bf;
+  color: #071512;
+  padding: 5px 10px;
   border-radius: 20px;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   font-weight: 800;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(52, 211, 153, 0.3);
+  letter-spacing: 0.2px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  border: 0;
 }
 
 .card-content-light {
@@ -592,12 +625,22 @@ body {
 }
 
 .company-logo-box {
-  padding-top: 15px;
+  padding-top: 14px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  min-height: 50px;
+  min-height: 42px;
+}
+
+.company-logo-box .company-mark,
+.company-logo-box .company-mark * {
+  color: #65e6bf !important;
+  font-family: inherit !important;
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.5px !important;
+  line-height: 1.2 !important;
 }
 
 /* Responsive constraints */
@@ -629,13 +672,12 @@ body {
     padding: 0 1rem;
   }
 
-  .logo-section svg {
-    width: 28px;
-    height: 28px;
+  .logo-section {
+    min-width: 0;
   }
 
-  .logo-section {
-    gap: 6px;
+  .navbar-logo {
+    width: 150px;
   }
 
   .logotop {

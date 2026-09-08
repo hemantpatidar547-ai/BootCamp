@@ -1,5 +1,11 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
+import student1 from './assets/student1.webp';
+import student2 from './assets/student2 (1).webp';
+import student3 from './assets/student3.webp';
+import student4 from './assets/student4.webp';
+import student5 from './assets/student5.webp';
+import office8 from './assets/office8.webp';
 
 export default function Home ()
 {
@@ -245,20 +251,18 @@ export default function Home ()
                     {/* Card 1 */ }
                     <div className="student-card-light">
                         <div className="card-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1521111998595-502a5a0d33e5?w=500&h=300&fit=crop" alt="Kushagra Setup" />
+                            <img src={ student1.src } alt="Neeraj Pawar" />
                             <div className="linkedin-float">in</div>
-                            <div className="package-tag-float">47 LPA</div>
+                            <div className="package-tag-float">21 LPA</div>
                         </div>
                         <div className="card-content-light">
                             <h3 className="student-name-dark">
-                                Kushagra Patidar
+                                Neeraj Pawar
                                 <span className="verified-blue">✔</span>
                             </h3>
-                            <p className="student-role">Full-Stack Engineer</p>
+                            <p className="student-role">Systems Engineer</p>
                             <div className="company-logo-box">
-                                <span style={ { fontWeight: '800', fontSize: '1.8rem', fontFamily: 'Arial, sans-serif', letterSpacing: '-1.5px', color: '#ffffff', display: 'flex', alignItems: 'flex-end', lineHeight: '0.8' } }>
-                                    amazon<span style={ { color: '#ff9900', fontSize: '2.4rem', position: 'relative', top: '2px', left: '-2px' } }>_</span>
-                                </span>
+                                <span className="company-mark">COFORGE</span>
                             </div>
                         </div>
                     </div>
@@ -266,18 +270,18 @@ export default function Home ()
                     {/* Card 2 */ }
                     <div className="student-card-light">
                         <div className="card-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&h=300&fit=crop" alt="Mansi Setup" />
+                            <img src={ student2.src } alt="Mansi Setup" />
                             <div className="linkedin-float">in</div>
                             <div className="package-tag-float">18+ LPA</div>
                         </div>
                         <div className="card-content-light">
                             <h3 className="student-name-dark">
-                                Mansi Sahu
+                                Vijay Nemada
                                 <span className="verified-blue">✔</span>
                             </h3>
-                            <p className="student-role">Software Developer</p>
+                            <p className="student-role">Backend  Engineer</p>
                             <div className="company-logo-box">
-                                <span style={ { color: '#4db8ff', fontWeight: '900', fontSize: '1.9rem', letterSpacing: '2px', fontFamily: 'Verdana, sans-serif' } }>TCS</span>
+                                <span className="company-mark">MIND RUBY</span>
                             </div>
                         </div>
                     </div>
@@ -285,18 +289,18 @@ export default function Home ()
                     {/* Card 3 */ }
                     <div className="student-card-light">
                         <div className="card-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&h=300&fit=crop" alt="Rishita Setup" />
+                            <img src={ student3.src } alt="Rishita Setup" />
                             <div className="linkedin-float">in</div>
-                            <div className="package-tag-float">17+ LPA</div>
+                            <div className="package-tag-float">11+ LPA</div>
                         </div>
                         <div className="card-content-light">
                             <h3 className="student-name-dark">
-                                Rishita Jain
+                                Sunny Ralanarkar
                                 <span className="verified-blue">✔</span>
                             </h3>
-                            <p className="student-role">Systems Engineer</p>
+                            <p className="student-role">Backend Engineer</p>
                             <div className="company-logo-box">
-                                <span style={ { color: '#0088cc', fontWeight: '800', fontSize: '1.7rem', fontFamily: 'Arial, sans-serif' } }>Infosys</span>
+                                <span className="company-mark">ASTRON MICRO</span>
                             </div>
                         </div>
                     </div>
@@ -304,25 +308,37 @@ export default function Home ()
                     {/* Card 4 */ }
                     <div className="student-card-light">
                         <div className="card-image-wrapper">
-                            <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=500&h=300&fit=crop" alt="Shruti Setup" />
+                            <img src={ student4.src } alt="Shruti Setup" />
                             <div className="linkedin-float">in</div>
-                            <div className="package-tag-float">25+ LPA</div>
+                            <div className="package-tag-float">15+ LPA</div>
                         </div>
                         <div className="card-content-light">
                             <h3 className="student-name-dark">
-                                Shruti Sarawagi
+                                Om Javia
                                 <span className="verified-blue">✔</span>
                             </h3>
-                            <p className="student-role">Frontend Engineer</p>
+                            <p className="student-role">Meta Developer</p>
                             <div className="company-logo-box">
-                                <span style={ { fontWeight: '700', fontSize: '1.7rem', fontFamily: 'Arial, sans-serif', letterSpacing: '-1px' } }>
-                                    <span style={ { color: '#4285F4' } }>G</span>
-                                    <span style={ { color: '#EA4335' } }>o</span>
-                                    <span style={ { color: '#FBBC05' } }>o</span>
-                                    <span style={ { color: '#4285F4' } }>g</span>
-                                    <span style={ { color: '#34A853' } }>l</span>
-                                    <span style={ { color: '#EA4335' } }>e</span>
-                                </span>
+                                <span className="company-mark">META SHORTS</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Card 5 */ }
+                    <div className="student-card-light">
+                        <div className="card-image-wrapper">
+                            <img src={ student5.src } alt="Placement student 5" />
+                            <div className="linkedin-float">in</div>
+                            <div className="package-tag-float">10+ LPA</div>
+                        </div>
+                        <div className="card-content-light">
+                            <h3 className="student-name-dark">
+                                Manish Patidar 
+                                <span className="verified-blue">✔</span>
+                            </h3>
+                            <p className="student-role">Full Stack Developer</p>
+                            <div className="company-logo-box">
+                                <span className="company-mark">INFOSYS</span>
                             </div>
                         </div>
                     </div>
@@ -405,7 +421,7 @@ export default function Home ()
                 <div className="message-container">
                     <div className="message-image-col">
                         <div className="message-img-backdrop"></div>
-                        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=900&h=900&fit=crop" alt="Coding team collaborating in a workshop" className="message-img" />
+                        <img src={ office8.src } alt="Coding Sharks team" className="message-img" />
                     </div>
                     <div className="message-text-col">
                         <span className="message-pill">AN HONEST MESSAGE</span>
